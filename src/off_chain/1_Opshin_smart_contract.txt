@@ -1,0 +1,42 @@
+python3 -m venv venv
+
+
+git clone https://github.com/OpShin/opshin-starter-kit.git
+python3 -m venv venv
+
+
+source ~/.vscode-server/SC/venv/bin/activate 
+
+source /media/nvhieu/1A4EA38A08C33944/nvhieu-data/Bot_tel_py/bot_dual_target/pyCardanonano/venv/bin/activate
+
+source venv/bin/activate
+
+pip install -U pip setuptools
+pip install poetry
+poetry completions bash >> ~/.bash_completion
+~/.bash_completion
+poetry --version
+
+poetry install
+poetry shell
+
+python3 scripts/build.py
+
+python3 src/off_chain/t1_make_dual.py owner1 beneficiary1 
+
+python3 src/off_chain/t1_collect_dual.py beneficiary1
+
+python3 src/off_chain/t1_collect_dual_Refund.py owner1
+
+python3 src/off_chain/t1_dual_Sell_ADA.py wallet1 beneficiary1
+
+python3 src/off_chain/t1_dual_Buy_ADA.py wallet1 beneficiary1
+
+python3 src/off_chain/address_utxo.py wallet1
+
+python3 src/off_chain/address_utxo_contract.py 
+
+
+
+
+python3 src/off_chain/asset_transaction.py owner1 beneficiary1
